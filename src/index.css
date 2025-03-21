@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 40s linear infinite;
+}
+
+/* Modern Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ea7f0a;
+  border-radius: 5px;
+  border: 2px solid #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d97508;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+  border-radius: 5px;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ea7f0a #1a1a1a;
+}

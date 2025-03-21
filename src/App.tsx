@@ -215,7 +215,7 @@ function App() {
         {/* Footer */}
         <footer className="py-8 px-4 bg-black text-center">
           <p className="text-gray-400">
-            © 2024 World's Largest Hackathon. All rights reserved.
+            © 2025 World's Largest Hackathon. All rights reserved.
           </p>
           <a
             href="http://hackathon.dev"

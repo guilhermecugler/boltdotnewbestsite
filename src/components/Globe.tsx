@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { Sphere, OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
-const dotGeometry = new THREE.SphereGeometry(0.002, 8, 8);
+const dotGeometry = new THREE.SphereGeometry(0.003, 8, 8); // Increased dot size
 const dotMaterial = new THREE.MeshBasicMaterial({ color: '#ea7f0a' });
 
 function createArcCurve(start: THREE.Vector3, end: THREE.Vector3) {
@@ -107,10 +107,11 @@ export function Globe() {
       <Sphere ref={globeRef} args={[0.8, 128, 128]}>
         <meshPhongMaterial
           color="#000000"
-          emissive="#000000"
+          emissive="#ea7f0a"
+          emissiveIntensity={0.1}
           specular="#ea7f0a"
           shininess={20}
-          opacity={0.1}
+          opacity={0.3}
           transparent
           wireframe
         />
@@ -120,7 +121,7 @@ export function Globe() {
       <Sphere args={[0.82, 64, 64]}>
         <meshPhongMaterial
           color="#ea7f0a"
-          opacity={0.1}
+          opacity={0.2}
           transparent
           side={THREE.BackSide}
         />
@@ -155,15 +156,15 @@ export function Globe() {
                 itemSize={3}
               />
             </bufferGeometry>
-            <lineBasicMaterial color="#ea7f0a" opacity={0.1} transparent />
+            <lineBasicMaterial color="#ea7f0a" opacity={0.2} transparent />
           </line>
         ))}
       </group>
 
       {/* Lighting */}
-      <ambientLight intensity={0.3} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} />
+      <ambientLight intensity={0.5} />
+      <pointLight position={[10, 10, 10]} intensity={1.5} />
+      <pointLight position={[-10, -10, -10]} intensity={0.8} />
     </>
   );
 }
